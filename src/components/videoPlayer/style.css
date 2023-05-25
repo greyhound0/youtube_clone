@@ -1,0 +1,24 @@
+.videoPlayer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+.infoContainer {
+  background-color: #0f0f0f;
+}
+.description {
+  color: #f1f1f0;
+}
+
+.playlist {
+  display: flex;
+  flex-direction: column;
+}
+
+.playingCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
