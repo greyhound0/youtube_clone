@@ -8,21 +8,31 @@ function VideoPlayer({ data, videoData = [] }) {
 
   useEffect(() => {
     if (videoData?.length) {
-      setActiveVideo(videoData?.find((item) => item?.postId === id));
+      setActiveVideo(null);
+      setTimeout(
+        () => setActiveVideo(videoData?.find((item) => item?.postId === id)),
+        0
+      );
+
       console.log(
         "activeVideo",
         videoData?.find((item) => item?.postId === id)
       );
     }
-  }, [videoData]);
+  }, [videoData, id]);
 
   return activeVideo?.submission?.mediaUrl ? (
     <div className="videoPlayer">
       <div style={{ display: "flex" }}>
         <div className="playingCard">
-          <video width="520" height="400" controls autoPlay>
-            <source src={activeVideo?.submission?.mediaUrl} type="video/mp4" />
-          </video>
+          {activeVideo?.submission?.mediaUrl ? (
+            <video width="520" height="400" controls autoPlay>
+              <source
+                src={activeVideo?.submission?.mediaUrl}
+                type="video/mp4"
+              />
+            </video>
+          ) : null}
           <div className="infoContainer">
             <p className="title">{activeVideo?.submission?.title}</p>
             <p className="description">

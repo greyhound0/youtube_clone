@@ -1,4 +1,11 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import {
+  BrowserRouter,
+  Navigate,
+  Route,
+  Router,
+  Routes,
+  useNavigate,
+} from "react-router-dom";
 import { Box } from "@mui/material";
 import "./App.css";
 import Navbar from "./components/navbar/Index";
@@ -11,47 +18,44 @@ import { staticData } from "./staticData";
 import ReactPaginate from "react-paginate";
 import VideoPlayer from "./components/videoPlayer/Index";
 
+export const loader =
+  "https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif";
+
 function App() {
   const [apiData, setApiData] = useState(null);
-  const [isLoading, setisLoading] = useState(
-    "https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif"
-  );
+  const [isLoading, setisLoading] = useState(false);
 
-  // useEffect(() => {
-  //   setApiData(staticData);
-  // }, []);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get(
-          "https://internship-service.onrender.com/videos",
-          {
-            params: {
-              page: 2,
-            },
-          }
-        );
-        console.log("respone.data", response.data);
-        setApiData(response.data);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    fetchData();
-    return () => {};
-  }, []);
-  console.log("APP_js", apiData);
+  const fetchData = async (page) => {
+    setisLoading(true);
+    try {
+      const response = await axios.get(
+        "https://internship-service.onrender.com/videos",
+        {
+          params: {
+            page: page - 1,
+          },
+        }
+      );
+      setApiData(response.data);
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setisLoading(false);
+    }
+  };
 
   return (
     <BrowserRouter>
       <Box sx={{ backgroundColor: "#000" }}>
         <Navbar />
+        {/* <Navigate replace="/" to="/1" /> */}
         <Routes>
           <Route
-            path="/"
+            path="/:page"
             exact
-            element={<Feed isLoading={isLoading} data={apiData} />}
+            element={
+              <Feed isLoading={isLoading} data={apiData} getData={fetchData} />
+            }
           />
           <Route
             path="/video/:id"
@@ -60,11 +64,6 @@ function App() {
             }
           />
         </Routes>
-        <ReactPaginate
-          nextLabel="Next"
-          previousLabel="Previous"
-          pageCount={0}
-        />
       </Box>
     </BrowserRouter>
   );
