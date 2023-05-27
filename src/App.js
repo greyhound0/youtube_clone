@@ -17,7 +17,7 @@ function App() {
   const [isLoading, setisLoading] = useState(false);
 
   useEffect(() => {
-    if (window.location.pathname !== "/1") {
+    if (window.location.pathname === "/") {
       window.location.href = "/1";
     }
   }, []);

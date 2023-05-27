@@ -21,6 +21,11 @@ function VideoPlayer({ data, videoData = [] }) {
     }
   }, [videoData, id]);
 
+  useEffect(() => {
+    // Scroll to the top when data changes
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [id]);
+
   return activeVideo?.submission?.mediaUrl ? (
     <div className="videoPlayer">
       <div className="videoAndPlaylist">
