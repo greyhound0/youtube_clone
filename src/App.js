@@ -5,7 +5,7 @@ import Navbar from "./components/navbar/Index";
 import Feed from "./components/feed/Index";
 
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import VideoPlayer from "./components/videoPlayer/Index";
 
@@ -15,6 +15,12 @@ export const loader =
 function App() {
   const [apiData, setApiData] = useState(null);
   const [isLoading, setisLoading] = useState(false);
+
+  useEffect(() => {
+    if (window.location.pathname !== "/1") {
+      window.location.href = "/1";
+    }
+  }, []);
 
   const fetchData = async (page) => {
     setisLoading(true);
