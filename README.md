@@ -1,3 +1,46 @@
+YouTube Clone
+=============
+
+This is a YouTube Clone project built with React that allows users to browse and watch videos. It utilizes the YouTube Data API to fetch video data.
+
+Installation
+------------
+
+1. Clone the repository:
+
+   git clone https://github.com/your-username/youtube_clone.git
+
+2. Navigate to the project directory:
+
+   cd youtube_clone
+
+3. Install the dependencies:
+
+   npm install
+
+Api Used
+-------------
+'https://internship-service.onrender.com/videos'
+
+
+Usage
+-----
+
+To run the project locally, use the following command:
+
+npm start
+
+This will start the development server and open the application in your default browser.
+
+Contributing
+------------
+
+Contributions are welcome! If you have any suggestions, bug reports, or feature requests, please open an issue or submit a pull request.
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
