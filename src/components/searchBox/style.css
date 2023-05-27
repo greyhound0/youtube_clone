@@ -1,0 +1,11 @@
+.search-bar {
+  background-color: #121212;
+  color: white;
+  width: 500px;
+}
+
+@media screen and (max-width: 750px) {
+  .search-bar {
+    width: 200px;
+  }
+}

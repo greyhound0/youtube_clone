@@ -21,7 +21,51 @@
   cursor: pointer;
 }
 
+.titleContainer {
+  display: flex;
+  flex-direction: column;
+}
+
 .creatorName {
   color: #727272;
   margin-top: 3px;
+}
+.thumbInfo {
+  display: flex;
+  gap: 20px;
+}
+
+@media screen and (max-width: 750px) {
+  .channelImage {
+    height: 20px;
+    width: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  .title {
+    font-size: 12px;
+    height: 20px;
+    display: flex;
+    align-items: flex-end;
+    padding: 4px 0;
+    padding-bottom: 0;
+  }
+
+  .creatorName {
+    display: flex;
+    align-items: flex-end;
+    margin-top: 0;
+  }
+
+  .thumbInfo {
+    display: flex;
+    gap: 5px;
+  }
+  .creatorName {
+    font-size: 12px;
+  }
+  .titleContainer {
+    padding-top: 2px;
+  }
 }

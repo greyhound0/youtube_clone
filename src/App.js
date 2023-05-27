@@ -1,21 +1,12 @@
-import {
-  BrowserRouter,
-  Navigate,
-  Route,
-  Router,
-  Routes,
-  useNavigate,
-} from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Box } from "@mui/material";
 import "./App.css";
 import Navbar from "./components/navbar/Index";
 import Feed from "./components/feed/Index";
-import { VideoDetail } from "./components/VideoDetail";
-import { ChannelDetail } from "./components/ChannelDetail";
+
 import axios from "axios";
-import { useEffect, useState } from "react";
-import { staticData } from "./staticData";
-import ReactPaginate from "react-paginate";
+import { useState } from "react";
+
 import VideoPlayer from "./components/videoPlayer/Index";
 
 export const loader =
@@ -48,7 +39,7 @@ function App() {
     <BrowserRouter>
       <Box sx={{ backgroundColor: "#000" }}>
         <Navbar />
-        {/* <Navigate replace="/" to="/1" /> */}
+
         <Routes>
           <Route
             path="/:page"

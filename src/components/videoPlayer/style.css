@@ -12,13 +12,39 @@
   color: #f1f1f0;
 }
 
+.video {
+  height: 400px;
+  width: 520px;
+}
+
 .playlist {
   display: flex;
   flex-direction: column;
+}
+.videoAndPlaylist {
+  display: flex;
 }
 
 .playingCard {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+@media screen and (max-width: 750px) {
+  .video {
+    height: 240px;
+    width: 320px;
+  }
+  .videoAndPlaylist {
+    flex-direction: column;
+  }
+  .playlist {
+    align-items: center;
+    margin-top: 10px;
+    gap: 5px;
+  }
+  .infoContainer {
+    padding: 5px;
+  }
 }

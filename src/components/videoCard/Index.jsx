@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import { Paper } from "@mui/material";
 import "./style.css";
-import VideoPlayer from "../videoPlayer/Index";
 
 const VideoCard = ({ data, index, isLoading }) => {
   console.log("videoCard", data);
@@ -9,6 +8,7 @@ const VideoCard = ({ data, index, isLoading }) => {
 
   return (
     <Paper
+      className="card"
       sx={{
         height: "300px",
         width: "350px",
@@ -24,6 +24,7 @@ const VideoCard = ({ data, index, isLoading }) => {
         <img
           src={data?.submission?.thumbnail}
           alt="yt"
+          className="image"
           style={{
             width: "350px",
             height: "200px",
@@ -36,13 +37,13 @@ const VideoCard = ({ data, index, isLoading }) => {
       ) : (
         <img src={isLoading} alt="gif" />
       )}
-      <div style={{ display: "flex", gap: "20px" }}>
+      <div className="thumbInfo">
         <img
           src={data?.creator?.pic}
           alt="channelImage"
           className="channelImage"
         />
-        <div style={{ display: "flex", flexDirection: "column" }}>
+        <div className="titleContainer">
           <span className="title">{data?.submission?.title}</span>
           <p className="creatorName">{data?.creator?.handle}</p>
         </div>

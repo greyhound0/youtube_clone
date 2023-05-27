@@ -1,6 +1,5 @@
 import React from "react";
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import "./style.css";
 import { Paper, IconButton } from "@mui/material";
 import { Search } from "@mui/icons-material";
 const SearchBar = () => {
@@ -20,12 +19,7 @@ const SearchBar = () => {
         backgroundColor: "#121212",
       }}
     >
-      <input
-        style={{ backgroundColor: "#121212", color: "white", width: "500px" }}
-        className="search-bar"
-        placeholder="Search"
-        onChange={() => {}}
-      />
+      <input className="search-bar" placeholder="Search" onChange={() => {}} />
       <IconButton
         type="submit"
         sx={{

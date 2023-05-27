@@ -23,10 +23,10 @@ function VideoPlayer({ data, videoData = [] }) {
 
   return activeVideo?.submission?.mediaUrl ? (
     <div className="videoPlayer">
-      <div style={{ display: "flex" }}>
+      <div className="videoAndPlaylist">
         <div className="playingCard">
           {activeVideo?.submission?.mediaUrl ? (
-            <video width="520" height="400" controls autoPlay>
+            <video className="video" controls autoPlay>
               <source
                 src={activeVideo?.submission?.mediaUrl}
                 type="video/mp4"
