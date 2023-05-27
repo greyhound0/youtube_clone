@@ -41,7 +41,7 @@ function VideoPlayer({ data, videoData = [] }) {
           </div>
         </div>
 
-        <div className="playlist">
+        <div key={id} className="playlist">
           {data?.data?.posts?.map((data, index) => (
             <Link to={"/video/" + data.postId}>
               <VideoCard key={index} data={data} index={index} />
