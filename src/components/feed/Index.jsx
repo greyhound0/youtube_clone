@@ -6,6 +6,8 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import ReactPaginate from "react-paginate";
 import { loader } from "../../App";
 
+import { ArrowBack, ArrowForward } from "@mui/icons-material";
+
 const Feed = ({ data, isLoading, pagenumber, getData }) => {
   const { page } = useParams();
   const navigate = useNavigate();
@@ -62,8 +64,8 @@ const Feed = ({ data, isLoading, pagenumber, getData }) => {
       </Stack>
       <div className="paginate">
         <ReactPaginate
-          nextLabel="Next"
-          previousLabel="Previous"
+          nextLabel={<ArrowForward />}
+          previousLabel={<ArrowBack />}
           pageCount={10}
           renderOnZeroPageCount={null}
           onPageChange={changePage}

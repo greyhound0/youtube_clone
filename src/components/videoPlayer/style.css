@@ -42,6 +42,7 @@
   .playlist {
     margin-top: 10px;
     gap: 5px;
+    margin-left: 10px;
   }
   .infoContainer {
     padding: 5px;
