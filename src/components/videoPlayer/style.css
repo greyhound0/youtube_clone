@@ -40,7 +40,6 @@
     flex-direction: column;
   }
   .playlist {
-    align-items: center;
     margin-top: 10px;
     gap: 5px;
   }
